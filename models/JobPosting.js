@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 
 const JobSchema = new mongoose.Schema({
-    email: {
-        type: String,
-        required: true
-    },
     position: {
         type: String,
         required: true

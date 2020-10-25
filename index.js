@@ -78,12 +78,11 @@ app.post('/api/upload', (req,res) => {
 
 //Create a set function to post jobs
 app.post('/api/emp_postings', (req,res) => {
-    let { email, position, company, pay, description } = req.body;
+    let { position, company, pay, description } = req.body;
     let myId = mongoose.Types.ObjectId();
 
     const newJob = new JobPosting({
         _id: myId,
-        email,
         position,
         company,
         pay,

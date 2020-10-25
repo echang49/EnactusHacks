@@ -11,9 +11,8 @@ class Newjob extends React.Component{
         let company = document.getElementById("name").value;
         let pay = document.getElementById("wage").value;
         let description = document.getElementById("description").value;
-        let email = document.getElementById("email").value;
 
-        axios.post('/api/emp_postings', {position, company, pay, description, email})
+        axios.post('/api/emp_postings', {position, company, pay, description})
             .then((res) => {
                 console.log(res.data);
                 alert("Thanks for creating a job offer! You can view your job posting at http://localhost:5000/empapplication?search=".concat(res.data).concat(". Password is: 12345"));
@@ -38,8 +37,6 @@ class Newjob extends React.Component{
                     <input type="text" placeholder="Type.." id="wage"/>
                     <h1>Job Description</h1>
                     <input type="text" placeholder="Type.." id="description"/>
-                    <h1>Email</h1>
-                    <input type="text" placeholder="Type.." id="email"/>
                     <br />
                     <button onClick={() => this.submit()}>Create</button>
                 </div>
